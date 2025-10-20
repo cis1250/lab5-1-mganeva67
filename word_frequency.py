@@ -24,3 +24,35 @@ def is_sentence(text):
         return False
 
     return True
+
+def get_sentence():
+    while True:
+        sentence = input("Enter a valide sentence:")
+
+    if is_sentence(statence):
+        return sentence
+    else:
+        print("Invalide input. A sentence must start with a capital letter and end with a punctuation")
+def calculater_frequencies(sentence):
+    last_char = sentence[-1]
+    if last_char == '.' or last_char == '?' or last_char =='!':
+        clean_sentence = sentence[:-1]
+    else:
+        clean_sentence = sentence
+      words.append(word)
+      frequencies.append(1)
+    return words, frequencies
+
+def print_frequencies(words, frequencies):
+    print("\n-Word Frequency Results-")
+    for i in range(len(words)):
+        word = words[i]
+        print(f"'{word}': {frequency}")
+        print("")
+
+def main():
+    user_sentence = get_sentence()
+    wordlist, freq_list = calculate_frequencies(user_sentence)
+    print_frequencies(word_lit, freq_list)
+if __name__=="__main__":
+    main()
