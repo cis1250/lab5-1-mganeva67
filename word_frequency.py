@@ -28,8 +28,7 @@ def is_sentence(text):
 def get_sentence():
     while True:
         sentence = input("Enter a valide sentence:")
-
-    if is_sentence(statence):
+    if is_sentence(sentence):
         return sentence
     else:
         print("Invalide input. A sentence must start with a capital letter and end with a punctuation")
@@ -39,20 +38,31 @@ def calculater_frequencies(sentence):
         clean_sentence = sentence[:-1]
     else:
         clean_sentence = sentence
-      words.append(word)
-      frequencies.append(1)
+        
+    words = []
+    frequencies = []
+    word_list = clean_sentence.lower().split()
+    
+    for word in word_list:
+        if word in words:
+            index = words.index(word)
+            frequencies[index] += 1
+        else:
+            word.append(word)
+            frequencies.append(1)
     return words, frequencies
 
 def print_frequencies(words, frequencies):
     print("\n-Word Frequency Results-")
     for i in range(len(words)):
         word = words[i]
-        print(f"'{word}': {frequency}")
+        print(f"'{word}': {frequencies}")
         print("")
 
 def main():
     user_sentence = get_sentence()
-    wordlist, freq_list = calculate_frequencies(user_sentence)
-    print_frequencies(word_lit, freq_list)
+    word_list, freq_list = calculater_frequencies(user_sentence)
+    print_frequencies(word_list, freq_list)
+
 if __name__=="__main__":
     main()
