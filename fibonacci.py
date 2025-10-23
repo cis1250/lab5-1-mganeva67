@@ -1,7 +1,4 @@
-#!/usr/bin/env python3
-
 # Fibonacci Sequence Exercise with functions
-# TODO: (Read detailed instructions in the Readme file)
 def get_input():
     N = 0
     while N <= 0:
@@ -35,7 +32,7 @@ def print_sequence_list(N, sequence_list):
     print("")
 
 def main():
-    num = input()
+    num = get_input()
     fib_list = generate_fibonacci(num)
     print_sequence_list(num, fib_list)
 # a checker
