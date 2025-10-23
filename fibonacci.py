@@ -10,26 +10,26 @@ def get_input():
             N = int(num)
 
             if N <= 0:
-                print("print enter a positive interger")
+                print("Print enter a positive interger")
             else: 
                 return N
         except ValueError:
-            printf("Invalid input. Please enter a whole number [integer]");
+            print("Invalid input. Please enter a whole number [integer]")
             N = 0 # wila loop continus
 
- def generate_fibonacci(N):
-     a = 0
-     b = 1
-     sequence_list = []
+def generate_fibonacci(N):
+    a = 0
+    b = 1
+    sequence_list = []
 
-      for i in range(N):
-          sequence_list.append(a)
-          temp = a + b
-          a = b
-          b = temp
-      return sequence_list
+    for i in range(N):
+        sequence_list.append(a)
+        temp = a + b
+        a = b
+        b = temp
+    return sequence_list
 
-def print_sequence(N, sequence):
+def print_sequence_list(N, sequence_list):
     print(f"\n--- Fibonaci Sequence for {N} Terms ---")
     print(*sequence_list)
     print("")
