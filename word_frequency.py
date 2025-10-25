@@ -31,10 +31,9 @@ def get_sentence():
     if is_sentence(sentence):
         return sentence
     else:
-        print("Invalide input. A sentence must start with a capital letter and end with a punctuation")
+        print("Invalide input. A sentence must start with a capital letter and end with a punctuation (., !, or ?).")
 def calculater_frequencies(sentence):
-    last_char = sentence[-1]
-    if last_char == '.' or last_char == '?' or last_char =='!':
+    if sentence[-1] in ['.', '?', '!']
         clean_sentence = sentence[:-1]
     else:
         clean_sentence = sentence
@@ -55,9 +54,8 @@ def calculater_frequencies(sentence):
 def print_frequencies(words, frequencies):
     print("\n-Word Frequency Results-")
     for i in range(len(words)):
-        word = words[i]
         print(f"'{word}': {frequencies}")
-        print("")
+    print("")
 
 def main():
     user_sentence = get_sentence()
